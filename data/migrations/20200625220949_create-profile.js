@@ -7,9 +7,21 @@ exports.up = (knex) => {
       table.string('name');
       table.string('avatarUrl');
       table.timestamps(true, true);
+    })
+
+    .createTable('incidents', function (table) {
+      table.increments();
+      table.string('location');
+      table.float('longitude');
+      table.float('latitude');
+      table.string('url', 255).notNullable();
+      table.string('title', 255).notNullable();
+      table.string('date', 255).notNullable();
     });
 };
 
 exports.down = (knex) => {
-  return knex.schema.dropTableIfExists('profiles');
+  return knex.schema
+    .dropTableIfExists('incidents')
+    .dropTableIfExists('profiles');
 };
