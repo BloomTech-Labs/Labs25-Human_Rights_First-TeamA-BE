@@ -3,7 +3,7 @@ const app = require('../app');
 const url = '/';
 
 app.get('/', function (req, res) {
-  res.status(200).json(SampleIncidents);
+  res.status(200);
 });
 
 describe('server', () => {

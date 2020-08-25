@@ -1,5 +1,4 @@
 const supertest = require('supertest');
-const express = require('express');
 const app = require('../app');
 const url = '/incidents';
 
