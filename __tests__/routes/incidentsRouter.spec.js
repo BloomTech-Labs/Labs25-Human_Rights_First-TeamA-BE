@@ -1,5 +1,5 @@
 const supertest = require('supertest');
-const app = require('../app');
+const app = require('../../api/app.js');
 const url = '/incidents';
 
 describe('server', () => {
@@ -8,10 +8,7 @@ describe('server', () => {
   });
 
   describe('GET /', function () {
-    it('has process.env.DB_ENV as "testing"', () => {
-      expect(process.env.DB_ENV).toBe('test');
-    });
-
+    
     it('responds with json', function (done) {
       supertest(app)
         .get('/incidents')
