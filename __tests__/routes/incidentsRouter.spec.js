@@ -8,7 +8,6 @@ describe('server', () => {
   });
 
   describe('GET /', function () {
-    
     it('responds with json', function (done) {
       supertest(app)
         .get('/incidents')
