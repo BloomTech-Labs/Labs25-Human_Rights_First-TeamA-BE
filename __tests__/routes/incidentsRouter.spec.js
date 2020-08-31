@@ -25,7 +25,9 @@ describe('server', () => {
           expect(200);
           return response;
         });
-      expect(incidents.body.data[0]).hasOwnProperty('id');
+      expect(
+        Object.prototype.hasOwnProperty.call(incidents.body.data[0], 'bar')
+      );
     });
   });
 });
